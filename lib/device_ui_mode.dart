@@ -11,9 +11,9 @@ class DeviceUiMode {
   DeviceUiMode();
 
   /// This information does not change from call to call. Cache it.
-  int _cachedModeType;
+  int? _cachedModeType;
 
-  Future<int> get modeType async =>
+  Future<int?> get modeType async =>
       _cachedModeType ??= await _channel.invokeMethod('getDeviceUiMode');
 }
 
